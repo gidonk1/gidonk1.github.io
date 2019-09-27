@@ -1,1 +1,95 @@
-Hello World
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="author" content="Gidon Katten"/>
+    <meta name="description" content="Maze Generator and Solver"/>
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <title> Maze Generator and Solver</title>
+
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="layout">
+
+        <h1>MAZE SOLVER</h1>
+
+        <div id="maze"></div>
+
+        <div id="myTutorial" class="tutorial">
+            <div class="tutorial-content">
+                <button id="close">&times;</button>
+                    <h2>Welcome to Maze Solver!</h2>
+                <div id="tutorialText">
+                    Randomly generate a maze with dimensions from the sliders by clicking on the "New Maze" button. <br> <br>
+                    When you are ready click "Start Game" to begin. <br> <br>
+                    Find your way through the maze to the end point using the arrow keys. <br> <br>
+                    If you are stuck or just want to see the fastest route, click on the "Show Solution" button.
+                </div>
+            </div>
+        </div>
+
+        <div id="overlay" onclick="overlayOff()">
+            <div id="youWinText">You Win!</div>
+        </div>
+
+        <div id="controls">
+
+            <div class="buttonContainer">
+                <button id="newMazeButton" class="hover">New Maze</button>
+            </div>
+
+            <div class="buttonContainer">
+                <button id="startGameButton" class="hover">Start Game</button>
+            </div>
+
+            <div class="sliderContainer">
+                <input type="range" min="5" max="50" value="25" class="slider" id="myRange1">
+                <label for="myRange1"></label>
+                <p>Height: <span id="height"></span></p>
+            </div>
+
+            <div class="sliderContainer">
+                <input type="range" min="5" max="50" value="25" class="slider" id="myRange2">
+                <label for="myRange2"></label>
+                <p>Width: <span id="width"></span></p>
+            </div>
+
+            <div class="buttonContainer">
+                <button id="solveButton" class="hover">Show Solution</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/cell.js"></script>
+    <script src="js/maze.js"></script>
+    <script src="js/displayMaze.js"></script>
+    <script src="js/button.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/movement.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/setup.js"></script>
+    <script src="js/overlay.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            mazeGeneratorAndSolver.css.initialise();
+        }());
+    </script>
+
+</body>
+
+</html>
+

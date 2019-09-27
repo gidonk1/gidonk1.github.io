@@ -1,0 +1,254 @@
+html, body, div, h1, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    color: #eee;
+    font-family: 'Arial', serif;
+    background: black;
+    text-align: center;
+}
+#layout {
+    margin: 20px;
+    display: -webkit-box; /* Flex for all browsers */
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+#controls {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* css for headings */
+h1 {
+    display: block;
+    font-family: 'Arial', serif;
+    font-size: 5vw;
+    text-align: center;
+    color: white;
+    padding-bottom: 15px;
+}
+
+/* css for heading */
+h2 {
+    display: block;
+    font-family: 'Arial', serif;
+    font-size: 3vw;
+    text-align: center;
+    color: black;
+    padding-bottom: 15px;
+}
+
+/* css for slider and button container*/
+.sliderContainer, .buttonContainer {
+    display: table-cell;
+}
+
+/* css for buttons */
+#newMazeButton, #startGameButton, #solveButton {
+    background-color: #F7931E;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.6; /* Opacity only 1 when mouse hovers over */
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.hover#newMazeButton:hover, .hover#startGameButton:hover, .hover#solveButton:hover {
+    opacity: 1;
+    transform: scale(1.05,1.05) /* Increase in size when mouse hovers over button */
+}
+
+/* css for sliders */
+.slider {
+    -webkit-appearance: none;
+    height: 25px;
+    background: #F7931E;
+    outline: none;
+    opacity: 0.6; /* Opacity only 1 when mouse hovers over */
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: white;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: white;
+    cursor: pointer;
+}
+
+p {
+    color: white;
+    font-family: 'Arial', serif;
+}
+
+/* css for maze */
+#maze {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    border: 5px solid white;
+    background: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.maze-row {
+    margin: 0;
+    width: 100%;
+    display: -webkit-box; /* Flex for all browsers */
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+div.maze-cell {
+    background: black;
+    flex: initial;
+    flex-shrink: 2;
+    border: 2px solid white;
+    transition: background 0.5s ease;
+}
+
+div.player {
+    background: #F7931E;
+    flex: initial;
+    flex-shrink: 2;
+    border: 2px solid white;
+    transition: background 0.5s ease;
+}
+
+div.path {
+    background: #FF0000 content-box;
+    flex: initial;
+    flex-shrink: 2;
+    border: 3px solid white;
+    transition: background 0.5s ease;
+}
+
+div.end {
+    background: #F7931E;
+    flex: initial;
+    flex-shrink: 2;
+    border: 2px solid white;
+    transition: background 0.5s ease;
+}
+
+div.left-open {
+    border-left-style: none;
+}
+
+div.right-open {
+    border-right-style: none;
+}
+
+div.up-open {
+    border-top-style: none;
+}
+
+div.down-open {
+    border-bottom-style: none;
+}
+
+/* css for 'You Win! overlay */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#youWinText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+/* css for tutorial */
+.tutorial {
+    display: block;
+    position: fixed;
+    z-index: 1; /* Sit on top of maze */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.tutorial-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #F7931E;
+    width: 80%;
+    max-height: 90vh;
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Close button for tutorial */
+#close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close:hover, #close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Text for tutorial */
+#tutorialText {
+    color: black;
+    font-family: 'Arial', serif;
+    line-height: 1.6;
+}

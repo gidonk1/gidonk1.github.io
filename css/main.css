@@ -7,18 +7,13 @@ html, body, div, h1, h2 {
     box-sizing: border-box;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
 body {
     color: #eee;
     font-family: 'Arial', serif;
     background: black;
     text-align: center;
 }
+
 #layout {
     margin: 20px;
     display: -webkit-box; /* Flex for all browsers */
@@ -119,7 +114,6 @@ p {
 
 /* css for maze */
 #maze {
-    display: block;
     opacity: 0;
     transition: opacity 0.25s ease;
     border: 5px solid white;
@@ -156,7 +150,7 @@ div.player {
 }
 
 div.path {
-    background: #FF0000 content-box;
+    background: #FF0000;
     flex: initial;
     flex-shrink: 2;
     border: 3px solid white;

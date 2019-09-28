@@ -1,7 +1,5 @@
 class Cell {
 
-    _nextCell; // used to solve maze
-
     constructor(y, x) {
         this._y = y;
         this._x = x;
@@ -10,6 +8,7 @@ class Cell {
         this._south = true;
         this._west = true;
         this._visited = false; // used to create and solve maze
+        this._nextCell = undefined; // used to solve maze
     };
 
     get x() {

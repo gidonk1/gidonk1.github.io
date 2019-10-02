@@ -5,7 +5,7 @@ Play the game here https://gidonk1.github.io/.
 Refer to the tutorial on the webpage.
 
 ## Implementation
-Built using mainly JavaScript.
+Built using JavaScript.
 \
 \
 Maze is represented as a 2D-array of cells. Note that leading dimension in the maze represents the rows 
